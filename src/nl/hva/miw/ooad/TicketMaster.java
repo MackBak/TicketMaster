@@ -52,11 +52,21 @@ public class TicketMaster {
 	 * @return
 	 */
 	public int meldVoorstellingAan( int a_id, String adres, String datum, double prijs ) {
-		// Opgave 2: Implementeer deze methode
+		if (!isGeregistreerdArtiest(a_id)) {
+			return -1; // Artist is not registered, so returning 1.
+		}
 
-		return 0;
+		Artiest artist = artiesten.get(a_id);
+		Voorstelling newPerformance = new Voorstelling(artist, adres, datum, prijs);
+
+		// Registers the new perfomance with a unique ID.
+		int v_id = newPerformance.getId();
+		voorstellingen.put(v_id, newPerformance);
+
+		return v_id; // Returning the newly established ID.
 	}
 	
+
 
 	/**
 	 * Klant koopt een ticket voor een voorstelling. Voegt ticket toe aan de ticketlijst van verkochte 
@@ -70,11 +80,22 @@ public class TicketMaster {
 	 * @param v_id - voorstelling_id
 	 */
 	public int koopTicket( int k_id, int v_id ) {
-		// Opgave 3: Implementeer deze methode
+		if (!isGeregistreerdKlant(k_id) || !isGeregistreerdVoorstelling(v_id)) {
+			return -1; // Returns -1 if customer or performance is not registered.
+		}
 
-		return 0;
+		Klant klant = klanten.get(k_id);
+		Voorstelling voorstelling = voorstellingen.get(v_id);
+
+		// Creates a new ticket with the with the given customer & performance, then adds it to the list of purchased tickets.
+		Ticket newTicket = new Ticket(klant, voorstelling);
+		klant.ticketGekocht(newTicket);
+
+		return newTicket.getId(); // Returns the unique ID of the new ticket.
 	}
-	
+
+
+
 	/**
 	 * Retourneert of klant geregistreerd is.
 	 * 
