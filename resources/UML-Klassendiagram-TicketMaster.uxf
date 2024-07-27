@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>520</y>
+      <w>350</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>Klant
+--
+-next_id: int
+
+
+--
++Klant(String naam, String adres)
+
+
+
+--
+getters/setters/toString weggelaten</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>290</y>
+      <w>270</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>Artiest
+--
+-next_id: int
+
+
+--
++Artiest(String naam, String adres)
+
+
+--
+getters/setters/toString weggelaten</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>40</y>
+      <w>280</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Persoon
+--
+
+
+--
++Persoon(String naam, String adres)
+
+
+--
+getters/setters/toString weggelaten</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>520</y>
+      <w>350</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>Ticket
+--
+-next_id: int
+
+
+--
++Ticket(Klant klant, Voorstelling voorstelling)
+
+
+--
+getters/setters/toString weggelaten</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>810</x>
+      <y>40</y>
+      <w>410</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>TicketMaster
+--
+
+
+
+--
+
+
+
+-isGeregistreerdKlant(int k_id): boolean
+-isGeregistreerdArtiest(int a_id): boolean
+-isGeregistreerdVoorstelling(int v_id): boolean
++totaleKosten(int k_id): double
+--
+getters/setters/toString weggelaten</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>900</x>
+      <y>520</y>
+      <w>340</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>Voorstelling
+--
+-next_id: int
+
+
+
+--
++Voorstelling(Artiest artiest, 
+         String adres, 
+         String datum, 
+         double prijs)
+--
+getters/setters/toString weggelaten</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
